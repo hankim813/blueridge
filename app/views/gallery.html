@@ -1,0 +1,11 @@
+<div class="col-xs-10 col-xs-offset-1">
+	<button>general</button>
+	<button>living space</button>
+	<button>bathrooms</button>
+	<button>bedrooms</button>
+	<div masonry>
+	  <div class="masonry-brick gallery" ng-repeat="photos in gallery.photos.general">
+	    <img ng-src="images/{{ photos }}">
+	  </div>
+	</div>
+</div>

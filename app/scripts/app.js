@@ -12,23 +12,18 @@ angular
   .module('blueridgeApp', [
     'ngAnimate',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'wu.masonry'
   ])
 
-  .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
   	$urlRouterProvider.otherwise('/');
 
   	$stateProvider
 
-  	.state('/', {
+  	.state('home', {
   		url: '/',
-  		resolve: {
-  			getWindowHeight: function ($window, windowSettings) {
-  				windowSettings.height = $window.innerHeight;
-  			}
-  		},
-  		templateUrl: '../views/home.html',
-  		controller: 'HomeController',
-  		controllerAs: 'home'
+  		templateUrl: '../views/home.html'
   	});
   }]);
