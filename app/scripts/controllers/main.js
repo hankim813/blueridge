@@ -46,6 +46,8 @@ angular
 
   .controller('GalleryController', [function () {
   	var vm = this;
+    vm.filter = filter;
+    vm.isActive = isActive;
 
     vm.photos = {
       general: ['http://i.imgur.com/tva9bKo.jpg', 'http://i.imgur.com/i4pEuhF.jpg', 'http://i.imgur.com/LkXkJoc.jpg', 'http://i.imgur.com/jpBxVKx.jpg', 'http://i.imgur.com/BA3opAv.jpg', 'http://i.imgur.com/re5kihW.jpg', 'http://i.imgur.com/TqltUPd.jpg', 'http://i.imgur.com/GDqryNI.jpg', 'http://i.imgur.com/TZk5iJf.jpg', 'http://i.imgur.com/gfTBFgG.jpg', 'http://i.imgur.com/WnjqORW.jpg', 'http://i.imgur.com/P3X3mkq.jpg', 'http://i.imgur.com/fSq8Ei5.jpg', 'http://i.imgur.com/rPA95jE.jpg', 'http://i.imgur.com/90EkQIR.jpg', 'http://i.imgur.com/2xeALdm.jpg'],
@@ -53,7 +55,41 @@ angular
       bathrooms: ['http://i.imgur.com/Db5qoKP.jpg', 'http://i.imgur.com/dHT851R.jpg', 'http://i.imgur.com/iae6H3v.jpg', 'http://i.imgur.com/Y3UEz5d.jpg', 'http://i.imgur.com/2ENASLQ.jpg', 'http://i.imgur.com/3zJPZEl.jpg', 'http://i.imgur.com/lPFixpq.jpg', 'http://i.imgur.com/QF1Ruly.jpg'],
       rooms: ['http://i.imgur.com/rWDIQ2t.jpg', 'http://i.imgur.com/xPfuKXw.jpg', 'http://i.imgur.com/pXNEUDG.jpg', 'http://i.imgur.com/oL6WK6m.jpg']
     };
+    vm.pictures = vm.photos.general;
 
+    function filter (type) {
+      switch (type) {
+      case 'general':
+        vm.pictures = vm.photos.general;
+        break;
+      case 'livingSpace':
+        vm.pictures = vm.photos.livingSpace;
+        break;
+      case 'bathrooms':
+        vm.pictures = vm.photos.bathrooms;
+        break;
+      case 'rooms': 
+        vm.pictures = vm.photos.rooms;
+        break;
+      }
+    };
+
+    function isActive (type) {
+      switch (type) {
+      case 'general':
+        return vm.pictures === vm.photos.general;
+        break;
+      case 'livingSpace':
+        return vm.pictures === vm.photos.livingSpace;
+        break;
+      case 'bathrooms':
+        return vm.pictures === vm.photos.bathrooms;
+        break;
+      case 'rooms': 
+        return vm.pictures === vm.photos.rooms;
+        break;
+      }
+    };
   }])
 
   .controller('ContactController', [function () {

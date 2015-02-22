@@ -1,11 +1,21 @@
 <div class="col-xs-10 col-xs-offset-1">
-	<button>general</button>
-	<button>living space</button>
-	<button>bathrooms</button>
-	<button>bedrooms</button>
-	<div masonry>
-	  <div class="masonry-brick gallery" ng-repeat="photos in gallery.photos.general">
-	    <img ng-src="images/{{ photos }}">
-	  </div>
+	<div class="center t-center header">
+		<i class="fa fa-thumbs-o-up"></i>
+
+		<h2>Years of Experience.</h2>
+		<p>For several decades we have been doing what we love, which is to bring the very best out of homes. Browse through our gallery and reimagine what your house could be.</p>
+	
+		<div class="gallery-filters">
+			<button ng-click="gallery.filter('general')" ng-class="{'gallery-active': gallery.isActive('general')}">General</button>
+			<button ng-click="gallery.filter('livingSpace')" ng-class="{'gallery-active': gallery.isActive('livingSpace')}">Living space</button>
+			<button ng-click="gallery.filter('bathrooms')" ng-class="{'gallery-active': gallery.isActive('bathrooms')}">Bathrooms</button>
+			<button ng-click="gallery.filter('rooms')" ng-class="{'gallery-active': gallery.isActive('rooms')}">Bedrooms</button>
+		</div>
+
+		<div masonry>
+		  <div class="masonry-brick" ng-repeat="photos in gallery.pictures">
+		    <img ng-src="{{ photos }}" class="gallery">
+		  </div>
+		</div>
 	</div>
 </div>
