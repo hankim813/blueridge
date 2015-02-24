@@ -92,7 +92,7 @@ angular
     };
   }])
 
-  .controller('ContactController', [function () {
+  .controller('TestimonialController', [function () {
   	var vm = this;
   }])
 

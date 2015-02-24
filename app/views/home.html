@@ -1,11 +1,13 @@
 <main id="home" class="landing-container" ng-style="app.setWindowHeight">
 	<div class="landing-header">
 		<div class="logo col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4">
-			<h1><span style="font-size: 1.45em;">BLUE RIDGE</span><br>Tile & Hardwood</h1>
+			<!-- <h1><span style="font-size: 1.45em;">BLUE RIDGE</span><br>Tile & Hardwood</h1> -->
+			<img src="images/logo.png" alt="Blue Ridge Tile & Hardwood Logo">
 		</div>
 	</div>
 </main>
 
 <section id="about" class="row" ng-include src="'views/about.html'" ng-controller="AboutController as about"></section>
 <section id="gallery" class="row" ng-include src="'views/gallery.html'" ng-controller="GalleryController as gallery"></section>
-<section id="contact" class="row" ng-include src="'views/contact.html'" ng-controller="ContactController as contact"></section>
+<section id="testimonial" class="row" ng-include src="'views/testimonial.html'" ng-controller="TestimonialController as testimonial"></section>
+<section id="contact" class="row" ng-include src="'views/contact.html'"></section>
